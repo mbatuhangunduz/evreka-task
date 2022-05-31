@@ -29,7 +29,8 @@ pip install -r requirements.txt
 
 ## Then you should get into "project" with the command "cd project" to create or update database.
 
-python manage.py makemigrations<br/>
+python manage.py makemigrations question1<br/>
+python manage.py makemigrations question2<br/>
 python manage.py migrate<br/>
 python manage.py runserver<br/>
 
