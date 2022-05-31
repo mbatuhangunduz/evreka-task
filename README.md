@@ -27,7 +27,7 @@ source venv/bin/activate
 
 pip install -r requirements.txt
 
-## Then you should get into "app" with the command "cd app" to create or update database.
+## Then you should get into "project" with the command "cd project" to create or update database.
 
 python manage.py makemigrations<br/>
 python manage.py migrate<br/>
