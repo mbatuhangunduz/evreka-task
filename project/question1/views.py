@@ -33,7 +33,7 @@ class NavigationRecordViewSet(viewsets.ModelViewSet):
             """The following 2 lines were written to eliminate the problems that may occur when sending parameters, such as small-capital letters or leaving spaces."""
             vehicle_plate = vehicle_plate.replace(" ", "")
             vehicle_plate = vehicle_plate.upper()
-            last_points = NavigationRecord.objects.filter(vehicle__plate=vehicle_plate, datetime__gte=request_time).order_by('-datetime')
+            last_points = NavigationRecord.objects.filter(vehicle__plate=vehicle_plate, datetime__gte=request_time).select_related("vehicle").order_by('-datetime')
             serializer = NavigationRecordListSerializer(last_points, many=True).data
             return Response(serializer, status=status.HTTP_200_OK)
             """
